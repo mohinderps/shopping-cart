@@ -34,6 +34,7 @@ class CartItem extends React.Component {
     return (
       <li className="cart-list-item">
         <div className="cart-list-item-name">
+          <img width="16" height="16" src={item.img_url} />
           <span>{item.name}</span>
           <button className="action-button"
             onClick={this.removeItemHandler}>x</button>

@@ -10,6 +10,11 @@
   padding: 10px;
 }
 
+.cart-list-item-name img {
+  vertical-align: text-top;
+  margin-right: 5px;
+}
+
 .cart-list-item-name .action-button {
   float: right;
 }
