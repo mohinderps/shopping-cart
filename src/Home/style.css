@@ -1,0 +1,24 @@
+.Home {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.go-to-cart-button {
+  background-color: #0099FF;
+  color: #FFFFFF;
+  border: 1px solid #0099FF;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.page-title {
+  font-weight: lighter;
+  color: #A9A9A9;
+}

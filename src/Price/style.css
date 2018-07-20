@@ -1,0 +1,27 @@
+.price {
+  display: inline-block;
+  margin-right: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-weight: lighter;
+  font-style: normal;
+}
+
+.price::before {
+  content: '$';
+}
+
+.cut {
+  color: #A9A9A9;
+  position: relative;
+  font-style: italic;
+}
+
+.cut::after {
+  content: '';
+  border-bottom: 2px solid red;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1px);
+}

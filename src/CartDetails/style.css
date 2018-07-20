@@ -1,0 +1,11 @@
+.cart-items-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-details {
+  flex-basis: 70%;
+  flex-grow: 1;
+  margin-right: 20px;
+}

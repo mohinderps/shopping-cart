@@ -1,0 +1,25 @@
+.cart-summary {
+  flex-basis: 30%;
+  flex-grow: 1;
+  border: 1px solid #EFEFEF;
+  align-self: flex-start;
+  font-weight: lighter;
+
+}
+
+.display-flex-justify-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.text-light {
+  color: #A9A9A9;
+}
+
+.background-gray {
+    background-color: #EFEFEF;
+}
