@@ -1,0 +1,9 @@
+.Badge {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  padding: 5px;
+  background-color: #70c35d;
+  color: white;
+  font-size: 90%;
+}

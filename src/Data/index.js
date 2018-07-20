@@ -11,7 +11,7 @@ const items= [
     "id":9091,
     "name":"Item2",
     "price":250,
-    "discount":15,
+    "discount":125,
     "type":"literature",
     "img_url":"https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg"
   },

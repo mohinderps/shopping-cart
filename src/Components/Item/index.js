@@ -3,6 +3,7 @@ import './style.css';
 import Price from '../Price';
 import {addToCart} from '../../Actions';
 import store from '../../Store';
+import Badge from '../Badge';
 
 class Item extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class Item extends React.Component {
               onClick={this.addToCartHandler}>Add to cart</button>
           </div>
         </div>
+        {item.price - item.discount === item.discount && <Badge />}
       </div>
     );
   }
