@@ -22,3 +22,26 @@
     width: 380px;
   }
 }
+
+.cart-list-item:first-child {
+  border-top: 1px solid #EFEFEF;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 20px;
+}
+
+.cart-header-name {
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.cart-header-quantity {
+  flex-basis: 23%;
+  text-align: center;
+  padding: 10px;
+}
+
+.cart-header-price {
+  flex-basis: 23%;
+  text-align: center;
+  padding: 10px;
+}
