@@ -1,5 +1,5 @@
 ```bash
-cd hackerearth-assignment
+cd hackerearth
 npm install
 npm run dev
 ```
