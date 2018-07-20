@@ -4,6 +4,18 @@
   margin-right: auto;
 }
 
+@media all and (max-width: 1050px) {
+  .Home {
+    width: 490px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .Home {
+    width: 235px;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;

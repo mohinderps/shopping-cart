@@ -1,45 +1,35 @@
 import React from 'react';
 import './style.css';
+import store from '../../Store';
 
 class NotificationBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      className: ''
-    };
-    this.hideNotificationBar = this.hideNotificationBar.bind(this);
   }
 
-  hideNotificationBar() {
-    this.setState({
-      className: 'hidden'
-    });
-  }
-
-  transformMessage({message}) {
-    return `${message} added to cart.`;
+  getMessage() {
+    const {cart} = store.getState();
+    if(cart.length === 0) {
+      return null;
+    }
+    else {
+      return `${cart[cart.length - 1].name} added successfully`;
+    }
   }
 
   render() {
-    const message = this.transformMessage(this.props);
-    const {className} = this.state;
+    const message = this.getMessage();
+    if(!message) {
+      return null;
+    }
     return (
-      <p className={className}>{message}</p>
+      <p>{message}</p>
     );
   }
 
-  startTimer() {
-    setTimeout(this.hideNotificationBar, 3000);
-  }
-
-  componentDidMount() {
-    this.startTimer();
-  }
-
   componentDidUpdate() {
-    this.startTimer();
+    
   }
-
 
 }
 

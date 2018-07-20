@@ -4,6 +4,31 @@
   margin-right: auto;
 }
 
+@media all and (max-width: 1050px) {
+  .Cart {
+    width: 490px;
+  }
+
+  .cart-overview {
+    flex-direction: column;
+  }
+
+  .cart-details {
+    order: 2;
+  }
+
+  .cart-summary {
+    order: 1;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .Cart {
+    width: 380px;
+  }
+}
+
 .cart-overview {
   display: flex;
+  justify-content: space-between;
 }

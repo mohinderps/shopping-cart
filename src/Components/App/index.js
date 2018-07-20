@@ -10,9 +10,7 @@ const App = () => {
   const {cart} = store.getState();
   return (
     <div>
-      <Route exact path="/" render={() => <Home cartSize={cart.length}
-        itemAddedToCart={null} />} />
-
+      <Route exact path="/" render={() => <Home cartSize={cart.length} />} />
       <Route exact path="/cart" render={() => <Cart cartItems={cart} />} />
     </div>
   );

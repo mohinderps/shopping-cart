@@ -1,10 +1,20 @@
 .cart-summary {
-  flex-basis: 30%;
-  flex-grow: 1;
+  width: 300px;
   border: 1px solid #EFEFEF;
   align-self: flex-start;
   font-weight: lighter;
+}
 
+@media all and (max-width: 1050px) {
+  .cart-summary {
+    width: 490px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .cart-summary {
+    width: 380px;
+  }
 }
 
 .display-flex-justify-space-between {
