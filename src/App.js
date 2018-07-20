@@ -4,6 +4,9 @@ import Cart from './Cart';
 import './App.css';
 import {Route, Redirect} from 'react-router-dom';
 
+import store from './store';
+import * as action from './actions';
+
 class App extends Component {
   constructor(props) {
     super(props);
