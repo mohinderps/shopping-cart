@@ -1,6 +1,6 @@
 import React from 'react';
 import Items from '../Items';
-import NotificationBar from '../NotificationBar';
+//import NotificationBar from '../NotificationBar';
 import {Link} from 'react-router-dom';
 import './style.css';
 

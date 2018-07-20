@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
 import Price from '../Price';
-import {addToCart} from '../actions';
-import store from '../store';
+import {addToCart} from '../../Actions';
+import store from '../../Store';
 
 class Item extends React.Component {
   constructor(props) {

@@ -1,7 +1,3 @@
-import React from 'react';
-import Item from '../Item';
-import './style.css';
-
 const items= [
   {
     "id":9090,
@@ -69,12 +65,4 @@ const items= [
   }
 ];
 
-const Items = () => (
-  <div className="Items">
-    {items.map(item => (
-      <Item key={item.id} item={item} />
-    ))}
-  </div>
-);
-
-export default Items;
+export default items;

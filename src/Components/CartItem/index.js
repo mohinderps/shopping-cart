@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.css';
 import Price from '../Price';
-import store from '../store';
+import store from '../../Store';
 
-import {removeFromCart, increaseQuantity, decreaseQuantity} from '../actions';
+import {removeFromCart, increaseQuantity, decreaseQuantity} from '../../Actions';
 
 class CartItem extends React.Component {
   constructor(props) {

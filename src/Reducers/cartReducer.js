@@ -1,4 +1,4 @@
-import hydrateStateWithLocalStorage from './storeHelper';
+import hydrateStateWithLocalStorage from '../Store/storeHelper';
 
 const initialState = {
   cart: []
