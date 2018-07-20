@@ -69,25 +69,12 @@ const items= [
   }
 ];
 
-class Items extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items
-    }
-  }
-
-  render() {
-    const {addToCart} = this.props;
-    return (
-      <div className="Items">
-        {items.map(item => (
-          <Item key={item.id} item={item} addToCart={addToCart}/>
-        ))}
-      </div>
-    )
-  }
-
-}
+const Items = () => (
+  <div className="Items">
+    {items.map(item => (
+      <Item key={item.id} item={item} />
+    ))}
+  </div>
+);
 
 export default Items;

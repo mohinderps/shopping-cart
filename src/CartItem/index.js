@@ -1,6 +1,9 @@
 import React from 'react';
 import './style.css';
 import Price from '../Price';
+import store from '../store';
+
+import {removeFromCart, increaseQuantity, decreaseQuantity} from '../actions';
 
 class CartItem extends React.Component {
   constructor(props) {
@@ -11,23 +14,23 @@ class CartItem extends React.Component {
   }
 
   removeItemHandler() {
-    const {removeFromCart, item} = this.props;
-    removeFromCart(item);
+    const {item} = this.props;
+    store.dispatch(removeFromCart(item));
   }
 
   increaseQuantityHandler() {
-    const {increaseQuantity, item} = this.props;
-    increaseQuantity(item);
+    const {item} = this.props;
+    store.dispatch(increaseQuantity(item));
 
   }
 
   decreaseQuantityHandler() {
-    const {decreaseQuantity, item} = this.props;
-    decreaseQuantity(item);
+    const {item} = this.props;
+    store.dispatch(decreaseQuantity(item));
   }
 
   render() {
-    const {item, increaseQuantity, decreaseQuantity, removeFromCart} = this.props;
+    const {item} = this.props;
     return (
       <li className="cart-list-item">
         <div className="cart-list-item-name">

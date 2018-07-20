@@ -3,15 +3,11 @@ import CartItem from '../CartItem';
 import './style.css';
 
 const CartDetails = (props) => {
-  const {cart, increaseQuantity, decreaseQuantity, removeFromCart} = props;
+  const {cart} = props;
   return (
     <div className="cart-details">
       <ul className="cart-items-list">
-        {cart.map(item => <CartItem key={item.id}
-          item={item}
-          increaseQuantity={increaseQuantity}
-          decreaseQuantity={decreaseQuantity}
-          removeFromCart={removeFromCart} />)}
+        {cart.map(item => <CartItem key={item.id} item={item} />)}
       </ul>
     </div>
   ) ;

@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
 import Price from '../Price';
+import {addToCart} from '../actions';
+import store from '../store';
 
 class Item extends React.Component {
   constructor(props) {
@@ -9,8 +11,8 @@ class Item extends React.Component {
   }
 
   addToCartHandler() {
-    const {item, addToCart} = this.props;
-    addToCart(item);
+    const {item} = this.props;
+    store.dispatch(addToCart(item));
   }
 
   render() {

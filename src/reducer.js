@@ -1,6 +1,10 @@
-const defaultState = {
+import hydrateStateWithLocalStorage from './storeHelper';
+
+const initialState = {
   cart: []
 };
+
+const defaultState = hydrateStateWithLocalStorage(initialState);
 
 const cartReducer = (state = defaultState, action) => {
   switch(action.type) {
@@ -33,6 +37,7 @@ const addToCart = (state, action) => {
       }
       return item;
     });
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
   return {...state, cart: updatedCart};
 }
 
@@ -40,6 +45,7 @@ const removeFromCart = (state, action) => {
   const {cart} = state;
   const itemToRemove = action.item;
   const updatedCart = cart.filter(item => item.id !== itemToRemove.id);
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
   return {...state, cart: updatedCart};
 }
 
@@ -52,18 +58,23 @@ const increaseQuantity = (state, action) => {
     }
     return item;
   });
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
   return {...state, cart: updatedCart};
 }
 
 const decreaseQuantity = (state, action) => {
   const {cart} = state;
   const itemToDecrease = action.item;
+  if(itemToDecrease.quantity === 1) {
+    return removeFromCart(state, action);
+  }
   const updatedCart = cart.map(item => {
     if(item.id === itemToDecrease.id) {
       return {...item, quantity: item.quantity - 1};
     }
     return item;
   });
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
   return {...state, cart: updatedCart};
 }
 

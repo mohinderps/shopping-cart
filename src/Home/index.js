@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import './style.css';
 
 const Home = props => {
-  const {addToCart, itemAddedToCart, cartSize} = props;
+  const {itemAddedToCart, cartSize} = props;
   return (
     <div className="Home">
       {/* {itemAddedToCart && <NotificationBar message={itemAddedToCart.name} />} */}
@@ -14,7 +14,7 @@ const Home = props => {
           <h2 className="page-title">All Items</h2>
           {cartSize > 0 && <Link to="/cart"><button className="go-to-cart-button">Go to cart ({cartSize})</button></Link>}
         </div>
-        <Items addToCart={addToCart}/>
+        <Items />
       </div>
     </div>
   );
