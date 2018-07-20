@@ -5,6 +5,10 @@ import Price from '../Price';
 class CartSummary extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      className: ''
+    }
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   totalItems(cart) {
@@ -42,28 +46,51 @@ class CartSummary extends React.Component {
   render() {
     const {cart} = this.props;
     return (
-      <div className="cart-summary">
-        <div className="padding">Total</div>
-        <div className="display-flex-justify-space-between text-light padding">
-          <div>Items({this.totalItems(cart)})</div>
-          <Price price={this.totalPrice(cart)} />
-        </div>
-        <div className="text-light padding">
-          <div className="display-flex-justify-space-between">
-            <div>Discount</div>
-            <Price price={this.priceDiscount(cart)} negative/>
+      <div className={this.state.className}>
+        <div className="cart-summary">
+          <div className="padding">Total</div>
+          <div className="display-flex-justify-space-between text-light padding">
+            <div>Items({this.totalItems(cart)})</div>
+            <Price price={this.totalPrice(cart)} />
           </div>
-          <div className="display-flex-justify-space-between">
-            <div>Type discount</div>
-            <Price price={this.typeDiscount(cart)} negative/>
+          <div className="text-light padding">
+            <div className="display-flex-justify-space-between">
+              <div>Discount</div>
+              <Price price={this.priceDiscount(cart)} negative/>
+            </div>
+            <div className="display-flex-justify-space-between">
+              <div>Type discount</div>
+              <Price price={this.typeDiscount(cart)} negative/>
+            </div>
           </div>
-        </div>
-        <div className="display-flex-justify-space-between background-gray padding">
-          <div>Order Total</div>
-          <Price price={this.orderValue(cart)} />
+          <div className="display-flex-justify-space-between background-gray padding">
+            <div>Order Total</div>
+            <Price price={this.orderValue(cart)} />
+          </div>
         </div>
       </div>
     )
+  }
+
+  handleScroll(event) {
+    if(window.scrollY > 30) {
+      this.setState({
+        className: 'fixed'
+      });
+    }
+    if(window.scrollY <= 30) {
+      this.setState({
+        className: ''
+      });
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 

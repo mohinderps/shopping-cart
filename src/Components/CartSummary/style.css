@@ -5,15 +5,30 @@
   font-weight: lighter;
 }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  right: calc((100vw - 1000px) / 2);
+}
+
 @media all and (max-width: 1050px) {
   .cart-summary {
     width: 490px;
+  }
+
+  .fixed {
+    position: relative;
+    right: 0;
   }
 }
 
 @media all and (max-width: 550px) {
   .cart-summary {
     width: 380px;
+  }
+  .fixed {
+    position: relative;
+    right: 0;
   }
 }
 
