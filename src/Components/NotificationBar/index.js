@@ -1,34 +1,30 @@
 import React from 'react';
 import './style.css';
 import store from '../../Store';
+import {setMessage} from '../../Actions';
 
 class NotificationBar extends React.Component {
   constructor(props) {
     super(props);
+    this.resetMessage = this.resetMessage.bind(this);
   }
 
-  getMessage() {
-    const {cart} = store.getState();
-    if(cart.length === 0) {
-      return null;
-    }
-    else {
-      return `${cart[cart.length - 1].name} added successfully`;
-    }
+  resetMessage() {
+    store.dispatch(setMessage(''));
   }
 
   render() {
-    const message = this.getMessage();
-    if(!message) {
-      return null;
-    }
+    const {message} = store.getState();
     return (
-      <p>{message}</p>
+      <div className="notification-bar">{message}</div>
     );
   }
 
   componentDidUpdate() {
-    
+    if(this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.timer = setTimeout(this.resetMessage, 3000);
   }
 
 }

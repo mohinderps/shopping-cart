@@ -1,6 +1,6 @@
 import React from 'react';
 import Items from '../Items';
-//import NotificationBar from '../NotificationBar';
+import NotificationBar from '../NotificationBar';
 import {Link} from 'react-router-dom';
 import './style.css';
 
@@ -8,7 +8,7 @@ const Home = props => {
   const {cartSize} = props;
   return (
     <div className="Home">
-      {/* <NotificationBar /> */}
+      <NotificationBar />
       <div>
         <div className="header">
           <h2 className="page-title">All Items</h2>

@@ -1,10 +1,12 @@
 import hydrateStateWithLocalStorage from '../Store/storeHelper';
 
 const initialState = {
-  cart: []
+  cart: [],
+  message: ''
 };
 
 const defaultState = hydrateStateWithLocalStorage(initialState);
+
 
 const cartReducer = (state = defaultState, action) => {
   switch(action.type) {
@@ -19,6 +21,9 @@ const cartReducer = (state = defaultState, action) => {
 
     case 'DECREASE_QUANTITY':
       return decreaseQuantity(state, action);
+
+    case 'SET_MESSAGE':
+      return setMessage(state, action);
 
     default:
       return state;
@@ -38,7 +43,7 @@ const addToCart = (state, action) => {
       return item;
     });
   localStorage.setItem('cart', JSON.stringify(updatedCart));
-  return {...state, cart: updatedCart};
+  return {...state, cart: updatedCart, message: `${itemToAdd.name} added successfully`};
 }
 
 const removeFromCart = (state, action) => {
@@ -76,6 +81,10 @@ const decreaseQuantity = (state, action) => {
   });
   localStorage.setItem('cart', JSON.stringify(updatedCart));
   return {...state, cart: updatedCart};
+}
+
+const setMessage = (state, action) => {
+  return {...state, message: action.message};
 }
 
 export default cartReducer;
